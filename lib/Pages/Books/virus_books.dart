@@ -3,13 +3,13 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 
-class RedesBooks extends StatefulWidget {
+class VirusBooks extends StatefulWidget {
   @override
-  _RedesBooksState createState() => _RedesBooksState();
+  _VirusBooksState createState() => _VirusBooksState();
 }
-class _RedesBooksState extends State<RedesBooks> {
+class _VirusBooksState extends State<VirusBooks> {
    final String apiUrl =
-      'https://www.googleapis.com/books/v1/volumes?q=virus';
+      'https://www.googleapis.com/books/v1/volumes?q=virus%20digital';
   Future<List<Book>> fetchBooks() async {
     final response = await http.get(Uri.parse(apiUrl));
 

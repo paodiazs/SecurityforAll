@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'Books/iot_books.dart';
 
 import 'Books/ciberseguridad_books.dart';
+import 'Books/privacidad_books.dart';
+import 'Books/redes_sociales_books.dart';
 import 'Books/virus_books.dart';
+import 'Books/redes_books.dart';
 
 
 void main() {
@@ -70,7 +74,7 @@ class CategoriasGridView extends StatelessWidget {//widget
                 Navigator.push(
                   context, 
                   MaterialPageRoute(
-                    builder: (context) => CiberseguridadBooks(),
+                    builder: (context) => VirusBooks(),
                   ),
                   );
                 break;
@@ -78,7 +82,7 @@ class CategoriasGridView extends StatelessWidget {//widget
                 Navigator.push(
                   context, 
                   MaterialPageRoute(
-                    builder: (context) => CiberseguridadBooks(),
+                    builder: (context) => IotBooks(),
                   ),
                   );
                 break;
@@ -86,7 +90,7 @@ class CategoriasGridView extends StatelessWidget {//widget
                 Navigator.push(
                   context, 
                   MaterialPageRoute(
-                    builder: (context) => CiberseguridadBooks(),
+                    builder: (context) => RedesSocialesBooks(),
                   ),
                   );
                 break;
@@ -94,7 +98,7 @@ class CategoriasGridView extends StatelessWidget {//widget
                 Navigator.push(
                   context, 
                   MaterialPageRoute(
-                    builder: (context) => CiberseguridadBooks(),
+                    builder: (context) => PrivacidadBooks(),
                   ),
                   );
                 break;
