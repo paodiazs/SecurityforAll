@@ -31,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
     
     HomePage(),
     CoursesPage(),
-    BooksPage(),
+    LibrosPage(),
     ProfilePage(),
   ];
 
