@@ -1,17 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'My App',
-      home: HomeePage(),
-    );
-  }
+  runApp(HomeePage());
 }
 
 class HomeePage extends StatelessWidget {
@@ -19,30 +9,9 @@ class HomeePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My App'),
+        title: Text('Mis Cursos'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Hello, World!',
-              style: TextStyle(fontSize: 24),
-            ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                print('Button Pressed!');
-              },
-              child: Text('Mis Cursos'),
-            ),
-            SizedBox(height: 16),
-            Expanded(
-              child: CoursesPage(),
-            ),
-          ],
-        ),
-      ),
+      body: CoursesPage(),
     );
   }
 }
@@ -54,7 +23,7 @@ class CoursesPage extends StatelessWidget {
       children: [
         Container(
           color: Colors.blue,
-          padding: EdgeInsets.fromLTRB(16.0, 32.0, 16.0, 16.0), // Top padding increased
+          padding: EdgeInsets.fromLTRB(16.0, 32.0, 16.0, 16.0),
           alignment: Alignment.centerLeft,
           child: Text(
             'Mis Cursos',
