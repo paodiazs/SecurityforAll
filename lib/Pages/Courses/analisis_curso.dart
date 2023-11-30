@@ -5,6 +5,7 @@ class AnalisisForensePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: AnalisisForenseContenido(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -15,6 +16,7 @@ class AnalisisForenseContenido extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Análisis Forense y Borrado Seguro'),
+        backgroundColor: Color(0xFF1E0094),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {

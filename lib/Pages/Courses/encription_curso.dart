@@ -5,6 +5,7 @@ class CifradoConsejosPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: CifradoConsejosContenido(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -15,13 +16,8 @@ class CifradoConsejosContenido extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Consejos de Cifrado'),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            // Navegar de regreso a la página de cursos (courses_page.dart)
-            Navigator.popUntil(context, ModalRoute.withName('/courses_page'));
-          },
-        ),
+        backgroundColor: Color(0xFF1E0094),
+        
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
