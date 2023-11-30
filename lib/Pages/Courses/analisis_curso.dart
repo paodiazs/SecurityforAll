@@ -17,13 +17,7 @@ class AnalisisForenseContenido extends StatelessWidget {
       appBar: AppBar(
         title: Text('Análisis Forense y Borrado Seguro'),
         backgroundColor: Color(0xFF1E0094),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            // Navegar de regreso a la página de cursos (courses_page.dart)
-            Navigator.popUntil(context, ModalRoute.withName('/courses_page'));
-          },
-        ),
+        
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
