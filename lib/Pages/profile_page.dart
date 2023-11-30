@@ -101,36 +101,40 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   Widget _buildLogoutButton(BuildContext context) {
-    return ElevatedButton.icon(
-      onPressed: () {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text('¿Cerrar Sesión?'),
-              content: Text('¿Estás seguro de que deseas cerrar sesión?'),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text('Cancelar'),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text('Cerrar Sesión'),
-                ),
-              ],
-            );
-          },
-        );
-      },
-      icon: Icon(Icons.exit_to_app),
-      label: Text('Cerrar Sesión'),
-    );
-  }
+  return ElevatedButton.icon(
+    onPressed: () {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('¿Cerrar Sesión?'),
+            content: Text('¿Estás seguro de que deseas cerrar sesión?'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('Cancelar'),
+              ),
+              TextButton(
+                onPressed: () {
+                  // Cierra la alerta
+                  Navigator.of(context).pop();
+                  // Navega a la pantalla de inicio de sesión (login)
+                  Navigator.pushReplacementNamed(context, '/login');
+                },
+                child: Text('Cerrar Sesión'),
+              ),
+            ],
+          );
+        },
+      );
+    },
+    icon: Icon(Icons.exit_to_app),
+    label: Text('Cerrar Sesión'),
+  );
+}
+
 }
 
 void main() {
