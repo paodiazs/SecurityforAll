@@ -19,6 +19,7 @@ class CoursesPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Categorías'),
         backgroundColor: Color(0xFF1E0094),
+        foregroundColor: Colors.white,
       ),
       body: CategoriasGridView(),
     );

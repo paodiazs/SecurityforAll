@@ -14,8 +14,9 @@ class LibrosPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Categorías'),
+        title: Text('Libros por categorías'),
         backgroundColor: Color(0xFF1E0094),
+        foregroundColor: Colors.white,
       ),
       body: CategoriasGridView(),//el body es un widget llamado CategoriasGridView()
     );

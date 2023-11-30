@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {//estado llamado LoginPageState,
   List<Usuario> usuarios = [
     Usuario(email: 'jorge@gmail.com', password: 'contraseña'),
     Usuario(email: 'paodiaz@gmail.com', password: 'pao123'),
-    Usuario(email: 'user@example.com', password: 'password'),
+    Usuario(email: 'juanpi@gmail.com', password: 'juan123'),
     Usuario(email: 'user4@example.com', password: 'password4'),
     Usuario(email: 'user5@example.com', password: 'password5'),
   ];
@@ -62,6 +62,7 @@ class _LoginPageState extends State<LoginPage> {//estado llamado LoginPageState,
       appBar: AppBar(
         title: Text('SecurityforAll'),
         backgroundColor: Color(0xFF1E0094),
+        foregroundColor: Colors.white,
       ),
       body: Padding(//padding para acomodar los elementos
         padding: const EdgeInsets.all(16.0),
@@ -83,6 +84,10 @@ class _LoginPageState extends State<LoginPage> {//estado llamado LoginPageState,
               onPressed: () {
                 _authenticateUser(context);
               },
+              style: ElevatedButton.styleFrom(
+              backgroundColor:  Color(0xFF1E0094),
+              foregroundColor: Colors.white, 
+              ),              
               child: Text('Iniciar Sesión'),
             ),
             SizedBox(height: 8),

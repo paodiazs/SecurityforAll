@@ -14,6 +14,8 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Mi Perfil'),
+        backgroundColor: Color(0xFF1E0094),
+        foregroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -22,6 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
           children: [
             _buildSectionButton(
               title: 'Información',
+              
               icon: Icons.info,
               onPressed: () {
                 setState(() {
@@ -29,9 +32,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 });
               },
             ),
+              SizedBox(height: 16),
             if (showInfo) _buildInfoSection(),
             _buildSectionButton(
               title: 'Política de Seguridad',
+              
               icon: Icons.security,
               onPressed: () {
                 setState(() {
@@ -88,8 +93,8 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Widget _buildInfoDetails() {
     return ListTile(
-      title: Text('Nombre: Usuario Ejemplo'),
-      subtitle: Text('Correo: usuario@example.com'),
+      title: Text('Nombre: Juan Perez'),
+      subtitle: Text('Correo: juanpi@gmail.com'),
     );
   }
 
@@ -124,6 +129,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   Navigator.pushReplacementNamed(context, '/login');
                 },
                 child: Text('Cerrar Sesión'),
+                
               ),
             ],
           );
@@ -137,8 +143,3 @@ class _ProfilePageState extends State<ProfilePage> {
 
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: ProfilePage(),
-  ));
-}
