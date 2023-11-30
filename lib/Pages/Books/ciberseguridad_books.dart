@@ -67,7 +67,7 @@ class Book {
   Book({required this.title, required this.author, required this.link});
 
 //factory crea instancias de la clase Book
-  factory Book.fromJson(Map<String, dynamic> json) {//
+  factory Book.fromJson(Map<String, dynamic> json) {
     final volumeInfo = json['volumeInfo'];
     final String title = volumeInfo['title'] ?? 'No title';
     final String author = (volumeInfo['authors'] as List<dynamic>?)

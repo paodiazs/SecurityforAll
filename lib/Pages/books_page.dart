@@ -8,13 +8,6 @@ import 'Books/virus_books.dart';
 import 'Books/redes_books.dart';
 
 
-void main() {
-  runApp(
-    MaterialApp(
-      home: LibrosPage(),
-    ),
-  );
-}
 
 class LibrosPage extends StatelessWidget {
   @override
