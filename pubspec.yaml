@@ -70,6 +70,7 @@ flutter:
      - images/iot.jpeg
      - images/privacidad.jpeg
      - images/redes-sociales.webp
+     - images/estudiante.png
      
 
   # An image asset can refer to one or more resolution-specific "variants", see
