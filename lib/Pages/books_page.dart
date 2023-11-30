@@ -113,36 +113,36 @@ class Categoria {//clase que contiene titulo e imagenAssetPath
 }
 
 class CategoriaCard extends StatelessWidget {
-  final Categoria categoria;//contendrá la información de la categoría que se utilizará para construir el card.
+  final Categoria categoria;
 
-  CategoriaCard({required this.categoria});//constructor
+  CategoriaCard({required this.categoria});
 
   @override
   Widget build(BuildContext context) {
-    return Card(//devolvemos un card(contenedor rectangular con sombra)
-      child: Column(//column para organizar el contenido de manera vertical
-        crossAxisAlignment: CrossAxisAlignment.stretch,//que se estiren horizontalmente
-        children: [//widgets hijos de la columna
-          // Imagen de la categoría
-          Image.asset(//Agrega un widget de imagen que carga una imagen desde una URL 
-            categoria.imagenAssetPath,
-            height: 150,
-            fit: BoxFit.cover,//ajustar al contenedor
-          ),
-          SizedBox(width: 10,height: 30,),
-          // Título de la categoría
-          Padding(//espacio de relleno alrededor del widget de texto
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              categoria.titulo,//de categoria, accedemos al título
-              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
+    return Card(
+      child: SizedBox(
+        height: 200, // Ajusta la altura según tus necesidades
+        child: ListView(
+          children: [
+            // Imagen de la categoría
+            Image.asset(
+              categoria.imagenAssetPath,
+              height: 150,
+              fit: BoxFit.cover,
             ),
-          ),
-        ],
+            SizedBox(height: 10),
+            // Título de la categoría
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                categoria.titulo,
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
-
