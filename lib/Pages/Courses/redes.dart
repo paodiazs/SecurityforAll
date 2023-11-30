@@ -15,7 +15,10 @@ class RedesConsejosContenido extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Consejos de Redes'),
+        title: Text(
+          'Seguridad Redes',
+          style: TextStyle(color: Colors.white), // Cambia el color del texto a blanco
+        ),
         backgroundColor: Color(0xFF1E0094),
         
       ),

@@ -15,9 +15,11 @@ class CifradoConsejosContenido extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Consejos de Cifrado'),
+        title: Text(
+          'Seguridad de Cifrado',
+          style: TextStyle(color: Colors.white), // Cambia el color del texto a blanco
+        ),
         backgroundColor: Color(0xFF1E0094),
-        
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),

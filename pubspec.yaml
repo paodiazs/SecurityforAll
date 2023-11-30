@@ -71,6 +71,14 @@ flutter:
      - images/privacidad.jpeg
      - images/redes-sociales.webp
      - images/estudiante.png
+     - images/redesoc.png
+     - images/social.jpeg
+     - images/emaill.jpg
+     - images/so.jpg
+     - images/redess.jpg
+     - images/cifradoo.jpg
+     - images/forensic.jpg
+     - images/forensicc.jpg
      
 
   # An image asset can refer to one or more resolution-specific "variants", see

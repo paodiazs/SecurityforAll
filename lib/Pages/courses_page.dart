@@ -30,32 +30,32 @@ class CategoriasGridView extends StatelessWidget {
   final List<Categoria> categorias = [
     Categoria(
       titulo: 'Redes Sociales',
-      imagenAssetPath: 'images/ciberseguridad.jpg',
+      imagenAssetPath: 'images/social.jpeg',
       nivel: 'Beginner',
     ),
     Categoria(
       titulo: 'E-mail',
-      imagenAssetPath: 'images/redes.jpeg',
+      imagenAssetPath: 'images/emaill.jpg',
       nivel: 'Beginner',
     ),
     Categoria(
       titulo: 'Sistema Operativo',
-      imagenAssetPath: 'images/virus.jpeg',
+      imagenAssetPath: 'images/so.jpg',
       nivel: 'Intermediate',
     ),
     Categoria(
       titulo: 'Redes',
-      imagenAssetPath: 'images/iot.jpeg',
+      imagenAssetPath: 'images/redess.jpg',
       nivel: 'Intermediate',
     ),
     Categoria(
-      titulo: 'Encriptación',
-      imagenAssetPath: 'images/redes-sociales.webp',
+      titulo: 'Cifrado',
+      imagenAssetPath: 'images/cifradoo.jpg',
       nivel: 'Advanced',
     ),
     Categoria(
       titulo: 'Análisis forense',
-      imagenAssetPath: 'images/privacidad.jpeg',
+      imagenAssetPath: 'images/forensicc.jpg',
       nivel: 'Advanced',
     ),
   ];
@@ -105,7 +105,7 @@ class CategoriasGridView extends StatelessWidget {
                   ),
                 );
                 break;
-              case 'Encriptación':
+              case 'Cifrado':
                 Navigator.push(
                   context,
                   MaterialPageRoute(

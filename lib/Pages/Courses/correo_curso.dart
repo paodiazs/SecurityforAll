@@ -5,9 +5,12 @@ class SeguridadCorreoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Consejos de Seguridad en el Correo Electrónico'),
+        title: Text(
+          'Seguridad Correo Electrónico',
+          style: TextStyle(color: Colors.white), // Cambia el color del texto a blanco
+        ),
         backgroundColor: Color(0xFF1E0094),
-        
+        automaticallyImplyLeading: false, // Elimina la flecha para regresar
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
@@ -28,6 +31,16 @@ class SeguridadCorreoPage extends StatelessWidget {
               titulo: 'Ten cuidado con los correos electrónicos sospechosos',
               descripcion:
                   'Evita abrir correos electrónicos de remitentes desconocidos. No hagas clic en enlaces ni descargues archivos adjuntos de correos sospechosos.',
+            ),
+            ConsejoCard(
+              titulo: 'Actualiza tu aplicación de correo regularmente',
+              descripcion:
+                  'Mantén tu aplicación de correo siempre actualizada para beneficiarte de las últimas correcciones de seguridad y mejoras.',
+            ),
+            ConsejoCard(
+              titulo: 'Revisa la configuración de privacidad de tu cuenta',
+              descripcion:
+                  'Asegúrate de revisar y ajustar la configuración de privacidad de tu cuenta de correo electrónico para controlar quién puede acceder a tu información.',
             ),
             // Agrega más ConsejoCard según sea necesario
           ],

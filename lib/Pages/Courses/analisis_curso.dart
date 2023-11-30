@@ -15,15 +15,12 @@ class AnalisisForenseContenido extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Análisis Forense y Borrado Seguro'),
-        backgroundColor: Color(0xFF1E0094),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            // Navegar de regreso a la página de cursos (courses_page.dart)
-            Navigator.popUntil(context, ModalRoute.withName('/courses_page'));
-          },
+        title: Text(
+          'Análisis Forense y Borrado Seguro',
+          style: TextStyle(color: Colors.white), // Cambia el color del texto a blanco
         ),
+        backgroundColor: Color(0xFF1E0094),
+        automaticallyImplyLeading: false, // Elimina la flecha para regresar
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),

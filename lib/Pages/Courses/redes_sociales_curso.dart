@@ -15,9 +15,11 @@ class RedesSocialesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Consejos de Redes Sociales'),
+        title: Text(
+          'Seguridad Redes Sociales',
+          style: TextStyle(color: Colors.white), // Cambia el color del texto a blanco
+        ),
         backgroundColor: Color(0xFF1E0094),
-        
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
@@ -38,6 +40,16 @@ class RedesSocialesPage extends StatelessWidget {
               titulo: 'Verifica la autenticidad de los perfiles',
               descripcion:
                   'Antes de aceptar solicitudes de amistad o seguir a alguien, asegúrate de que el perfil sea legítimo. Evita compartir información con cuentas falsas.',
+            ),
+            ConsejoCard(
+              titulo: 'Limita la cantidad de información personal en tu perfil',
+              descripcion:
+                  'Evita proporcionar detalles personales como dirección, número de teléfono o información financiera en tu perfil de redes sociales.',
+            ),
+            ConsejoCard(
+              titulo: 'Revisa las configuraciones de privacidad regularmente',
+              descripcion:
+                  'Las plataformas de redes sociales pueden actualizar sus configuraciones de privacidad. Asegúrate de revisar y ajustar estas configuraciones periódicamente.',
             ),
             // Agrega más ConsejoCard según sea necesario
           ],
