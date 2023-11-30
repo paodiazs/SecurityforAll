@@ -7,9 +7,11 @@ class IotBooks extends StatefulWidget {
   @override
   _IotBooksState createState() => _IotBooksState();
 }
+
 class _IotBooksState extends State<IotBooks> {
-   final String apiUrl =
+  final String apiUrl =
       'https://www.googleapis.com/books/v1/volumes?q=internet%20de%20las%20cosas';
+
   Future<List<Book>> fetchBooks() async {
     final response = await http.get(Uri.parse(apiUrl));
 
@@ -25,7 +27,10 @@ class _IotBooksState extends State<IotBooks> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Libros'),
+        title: Text(
+          'Libros',
+          style: TextStyle(color: Colors.white), // Cambiar color del título
+        ),
         backgroundColor: Color(0xFF1E0094),
       ),
       body: FutureBuilder<List<Book>>(
@@ -49,7 +54,6 @@ class _IotBooksState extends State<IotBooks> {
   }
 }
 
-
 class Book {
   final String title;
   final String author;
@@ -57,8 +61,7 @@ class Book {
 
   Book({required this.title, required this.author, required this.link});
 
-
-  factory Book.fromJson(Map<String, dynamic> json) {//
+  factory Book.fromJson(Map<String, dynamic> json) {
     final volumeInfo = json['volumeInfo'];
     final String title = volumeInfo['title'] ?? 'No title';
     final String author = (volumeInfo['authors'] as List<dynamic>?)
@@ -69,6 +72,7 @@ class Book {
     return Book(title: title, author: author, link: link);
   }
 }
+
 class BookCard extends StatelessWidget {
   final Book book;
 
@@ -78,7 +82,6 @@ class BookCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        
         launch(book.link);
       },
       child: Card(

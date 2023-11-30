@@ -7,46 +7,44 @@ class CiberseguridadBooks extends StatefulWidget {
   @override
   _CiberseguridadBooksState createState() => _CiberseguridadBooksState();
 }
+
 class _CiberseguridadBooksState extends State<CiberseguridadBooks> {
-   final String apiUrl =
-      'https://www.googleapis.com/books/v1/volumes?q=ciberseguridad';//link a la api con filtro de busqueda q=titulos de Ciberseguridad
+  final String apiUrl =
+      'https://www.googleapis.com/books/v1/volumes?q=ciberseguridad';
 
-      //método para llamar a la API llamado fetchbooks
-  Future<List<Book>> fetchBooks() async {//indica que retornará un objeto Future que contendrá una lista del objeto Book
-    final response = await http.get(Uri.parse(apiUrl));//utiliza http para realizar una petición get
+  Future<List<Book>> fetchBooks() async {
+    final response = await http.get(Uri.parse(apiUrl));
 
-    if (response.statusCode == 200) {//si el codigo de respuesta es igual a 200
-      final List<dynamic> data = json.decode(response.body)['items'];//data contendrá la lista de libros decodificada
+    if (response.statusCode == 200) {
+      final List<dynamic> data = json.decode(response.body)['items'];
       return data.map((book) => Book.fromJson(book)).toList();
-      //devolvemos a data(que es una lista)y convertimos cada elemento a json y luego lo convetimos a lista
     } else {
-      throw Exception('Failed to load books');//error
+      throw Exception('Failed to load books');
     }
   }
 
- 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(//widget que da unaestructura básica de pantalla
-      appBar: AppBar(//app bar, barra de arriba 
-        title: Text('Libros'),//con texto libros
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Libros',
+          style: TextStyle(color: Colors.white), // Cambiar color del título
+        ),
         backgroundColor: Color(0xFF1E0094),
       ),
-      body: FutureBuilder<List<Book>>(//construye yba interfaz en función del future e indica que el tipo de datos es una lista de objetos Book
-        future: fetchBooks(),//tomamos el future que Futurebuilder necesita y es fetchbooks() que devuelve Future<List<Book>>
-        builder: (context, snapshot) {//builder construye la interfaz y recibe dos parámetros, context->infromacion del contexto del widget y snapshot->contiene el estado actual del Future
-          if (snapshot.connectionState == ConnectionState.waiting) {//si su estado es igual a .waiting
-            return Center(child: CircularProgressIndicator());//devuelve un indicador de carga
-          } else if (snapshot.hasError) {//si el estado tiene un error
-            return Center(child: Text('Error: ${snapshot.error}'));//devuelve un mensaje de error
-          } else {//si todo sale bien 
-            return ListView.builder(//devuelve un ListView.builder que es un widget para constuir una lista de elementos
-              itemCount: snapshot.data!.length,//cantidad total de elementos 
-              itemBuilder: (context, index) {//toma un contexto y un índice para mostrar la posición de la lista
-                return BookCard(book: snapshot.data![index]);//devuelve un BookCard que es un widget para cada libro de la lista 
-                //se pasa un objeto book
-                //snapshot.data contiene el estado actual del Future y .data es la lista de libros obtenida de la api
-                //estamos diciendo que BookCard va a tener un book, el cual tiene la lista de libros de la api,mostrando el index (si snapshot.data no es nulo) dependiendo del itemCount
+      body: FutureBuilder<List<Book>>(
+        future: fetchBooks(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else {
+            return ListView.builder(
+              itemCount: snapshot.data!.length,
+              itemBuilder: (context, index) {
+                return BookCard(book: snapshot.data![index]);
               },
             );
           }
@@ -56,17 +54,13 @@ class _CiberseguridadBooksState extends State<CiberseguridadBooks> {
   }
 }
 
-
-//clase Book
 class Book {
-  //variables privadas(de instancia en flutter) de la clase
   final String title;
   final String author;
   final String link;
-//constructor 
+
   Book({required this.title, required this.author, required this.link});
 
-//factory crea instancias de la clase Book
   factory Book.fromJson(Map<String, dynamic> json) {
     final volumeInfo = json['volumeInfo'];
     final String title = volumeInfo['title'] ?? 'No title';
@@ -78,6 +72,7 @@ class Book {
     return Book(title: title, author: author, link: link);
   }
 }
+
 class BookCard extends StatelessWidget {
   final Book book;
 

@@ -7,9 +7,10 @@ class PrivacidadBooks extends StatefulWidget {
   @override
   _PrivacidadBooksState createState() => _PrivacidadBooksState();
 }
+
 class _PrivacidadBooksState extends State<PrivacidadBooks> {
-   final String apiUrl =
-      'https://www.googleapis.com/books/v1/volumes?q=privacidad%20internet';
+  final String apiUrl = 'https://www.googleapis.com/books/v1/volumes?q=privacidad%20internet';
+
   Future<List<Book>> fetchBooks() async {
     final response = await http.get(Uri.parse(apiUrl));
 
@@ -25,7 +26,7 @@ class _PrivacidadBooksState extends State<PrivacidadBooks> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Libros'),
+        title: Text('Libros', style: TextStyle(color: Colors.white)), // Cambia el color del texto en la AppBar a blanco
         backgroundColor: Color(0xFF1E0094),
       ),
       body: FutureBuilder<List<Book>>(
@@ -49,7 +50,6 @@ class _PrivacidadBooksState extends State<PrivacidadBooks> {
   }
 }
 
-
 class Book {
   final String title;
   final String author;
@@ -57,18 +57,16 @@ class Book {
 
   Book({required this.title, required this.author, required this.link});
 
-
-  factory Book.fromJson(Map<String, dynamic> json) {//
+  factory Book.fromJson(Map<String, dynamic> json) {
     final volumeInfo = json['volumeInfo'];
     final String title = volumeInfo['title'] ?? 'No title';
-    final String author = (volumeInfo['authors'] as List<dynamic>?)
-            ?.join(', ') ??
-        'No author';
+    final String author = (volumeInfo['authors'] as List<dynamic>?)?.join(', ') ?? 'No author';
     final String link = volumeInfo['infoLink'] ?? '';
 
     return Book(title: title, author: author, link: link);
   }
 }
+
 class BookCard extends StatelessWidget {
   final Book book;
 
@@ -78,7 +76,6 @@ class BookCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        
         launch(book.link);
       },
       child: Card(

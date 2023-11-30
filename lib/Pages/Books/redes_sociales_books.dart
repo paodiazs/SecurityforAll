@@ -25,7 +25,10 @@ class _RedesSocialesBooksState extends State<RedesSocialesBooks> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Libros'),
+        title: Text(
+          'Libros',
+          style: TextStyle(color: Colors.white), // Cambiar color del título
+        ),
         backgroundColor: Color(0xFF1E0094),
       ),
       body: FutureBuilder<List<Book>>(
@@ -58,7 +61,7 @@ class Book {
   Book({required this.title, required this.author, required this.link});
 
 
-  factory Book.fromJson(Map<String, dynamic> json) {//
+  factory Book.fromJson(Map<String, dynamic> json) {
     final volumeInfo = json['volumeInfo'];
     final String title = volumeInfo['title'] ?? 'No title';
     final String author = (volumeInfo['authors'] as List<dynamic>?)
@@ -78,7 +81,6 @@ class BookCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        
         launch(book.link);
       },
       child: Card(
